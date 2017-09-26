@@ -1,7 +1,7 @@
 /*************************************************************************
- *  Copyright (C), 2017-2018, Mogoson tech. Co., Ltd.
+ *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
  *  FileName: MeshCombiner.cs
- *  Author: Mogoson   Version: 1.0   Date: 8/31/2017
+ *  Author: Mogoson   Version: 0.1.0   Date: 8/31/2017
  *  Version Description:
  *    Internal develop version,mainly to achieve its function.
  *  File Description:
@@ -14,7 +14,7 @@
  *     1.
  *  History:
  *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     8/31/2017       1.0        Build this file.
+ *     1.     Mogoson     8/31/2017       0.1.0        Create this file.
  *************************************************************************/
 
 namespace Developer.MeshCombiner
@@ -26,10 +26,10 @@ namespace Developer.MeshCombiner
     public class MeshCombiner : ScriptableWizard
     {
         #region Property and Field
-        [Tooltip("Root gameObject of meshes.")]
+        [Tooltip("Root gameobject of meshes.")]
         public GameObject meshesRoot;
 
-        [Tooltip("Target gameObject to save new combine meshe.")]
+        [Tooltip("Gameobject to save new combine mesh.")]
         public GameObject meshSave;
         #endregion
 
@@ -74,7 +74,6 @@ namespace Developer.MeshCombiner
             }
             var newMesh = new Mesh();
             newMesh.CombineMeshes(combines, false);
-            newMesh.Optimize();
 
             meshSave.AddComponent<MeshFilter>().sharedMesh = newMesh;
             meshSave.AddComponent<MeshCollider>().sharedMesh = newMesh;
@@ -82,6 +81,7 @@ namespace Developer.MeshCombiner
 
             AssetDatabase.CreateAsset(newMesh, newMeshPath);
             AssetDatabase.Refresh();
+            Selection.activeObject = newMesh;
         }
         #endregion
     }
