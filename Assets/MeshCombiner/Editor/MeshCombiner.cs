@@ -17,12 +17,12 @@
  *     1.     Mogoson     8/31/2017       0.1.0        Create this file.
  *************************************************************************/
 
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+
 namespace Developer.MeshCombiner
 {
-    using System.Collections.Generic;
-    using UnityEditor;
-    using UnityEngine;
-
     public class MeshCombiner : ScriptableWizard
     {
         #region Property and Field
