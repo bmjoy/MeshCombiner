@@ -18,11 +18,7 @@
 ## Preview
 - MeshCombiner
 
-![MeshCombiner](./Attachments/MeshCombiner.png)
-
-- CombineMesh
-
-![CombineMesh](./Attachments/CombineMesh.png)﻿
+![MeshCombiner](./Attachments/README_Image/MeshCombiner.gif)
 
 ## Contact
-- If you have any questions, fell free to contact me at mogoson@qq.com.
+- If you have any questions, feel free to contact me at mogoson@qq.com.
