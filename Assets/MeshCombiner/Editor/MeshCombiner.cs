@@ -69,9 +69,8 @@ namespace Developer.MeshCombiner
             var newMesh = new Mesh();
             newMesh.CombineMeshes(combines, false);
 
-#if UNITY_5_5_OR_NEWER
-            //Mesh.Optimize() was removed in version 5.5.2p4.
-#else
+#if !UNITY_5_5_OR_NEWER
+            //Mesh.Optimize was removed in version 5.5.2p4.
             newMesh.Optimize();
 #endif
             meshSave.AddComponent<MeshFilter>().sharedMesh = newMesh;
